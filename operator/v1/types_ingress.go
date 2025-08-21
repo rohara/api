@@ -1440,22 +1440,51 @@ type AccessLogging struct {
 	// +required
 	Destination LoggingDestination `json:"destination"`
 
+	// tcpLogFormat specifies the format of the log message for a TCP
+	// request.
+	//
+	// If this field is empty, log messages use the implementation's default
+	// TCP log format.  For HAProxy's default TCP log format, see the
+	// HAProxy documentation:
+	// http//docs.haproxy.org/2.8/configuration.html#8.2.2
+	//
+	// Note that this format only applies to TCP connections.  It only affects
+	// the log format for TLS passthrough connections.
+	//
+	// +optional
+	TcpLogFormat string `json:"tcpLogFormat,omitempty"`	
+
 	// httpLogFormat specifies the format of the log message for an HTTP
 	// request.
 	//
 	// If this field is empty, log messages use the implementation's default
 	// HTTP log format.  For HAProxy's default HTTP log format, see the
 	// HAProxy documentation:
-	// http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#8.2.3
+	// http://docs.haproxy.org/2.8/configuration.html#8.2.3
 	//
-	// Note that this format only applies to cleartext HTTP connections
-	// and to secure HTTP connections for which the ingress controller
-	// terminates encryption (that is, edge-terminated or reencrypt
-	// connections).  It does not affect the log format for TLS passthrough
-	// connections.
+	// Note that this format only applies to cleartext HTTP connections.
+	// It does not affect the log format for TLS passthrough connections,
+	// nor does it affect the log format for connections for which the
+	// ingress controller terminates encryption.
 	//
 	// +optional
 	HttpLogFormat string `json:"httpLogFormat,omitempty"`
+
+	// httpsLogFormat specifies the format of the log messsage for an HTTPS
+	// request.
+	//
+	// If this field is empty, log messages use the implementation's default
+	// HTTPS log format.  For HAProxy's default HTTPS log format, see the
+	// HAProxy documentation:
+	// http://docs.haproxy.org/2.8/configuration.html#8.2.4
+	//
+	// Note that this format only applies to HTTPS connections for which the
+	// ingress controller terminates encryption (that is, edge-terminated or
+	// reencrypt connections).  It does not affect the log format for TLS
+	// passthrough connections.
+	//
+	// +optional
+	HttpsLogFormat string `json:"httpsLogFormat,omitempty"`
 
 	// httpCaptureHeaders defines HTTP headers that should be captured in
 	// access logs.  If this field is empty, no headers are captured.

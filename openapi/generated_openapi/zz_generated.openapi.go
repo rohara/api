@@ -46460,9 +46460,23 @@ func schema_openshift_api_operator_v1_AccessLogging(ref common.ReferenceCallback
 							Ref:         ref("github.com/openshift/api/operator/v1.LoggingDestination"),
 						},
 					},
+					"tcpLogFormat": {
+						SchemaProps: spec.SchemaProps{
+							Description: "tcpLogFormat specifies the format of the log message for a TCP request.\n\nIf this field is empty, log messages use the implementation's default TCP log format.  For HAProxy's default TCP log format, see the HAProxy documentation: http//docs.haproxy.org/2.8/configuration.html#8.2.2\n\nNote that this format only applies to TCP connections.  It only affects the log format for TLS passthrough connections.",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"httpLogFormat": {
 						SchemaProps: spec.SchemaProps{
-							Description: "httpLogFormat specifies the format of the log message for an HTTP request.\n\nIf this field is empty, log messages use the implementation's default HTTP log format.  For HAProxy's default HTTP log format, see the HAProxy documentation: http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#8.2.3\n\nNote that this format only applies to cleartext HTTP connections and to secure HTTP connections for which the ingress controller terminates encryption (that is, edge-terminated or reencrypt connections).  It does not affect the log format for TLS passthrough connections.",
+							Description: "httpLogFormat specifies the format of the log message for an HTTP request.\n\nIf this field is empty, log messages use the implementation's default HTTP log format.  For HAProxy's default HTTP log format, see the HAProxy documentation: http://docs.haproxy.org/2.8/configuration.html#8.2.3\n\nNote that this format only applies to cleartext HTTP connections. It does not affect the log format for TLS passthrough connections, nor does it affect the log format for connections for which the ingress controller terminates encryption.",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"httpsLogFormat": {
+						SchemaProps: spec.SchemaProps{
+							Description: "httpsLogFormat specifies the format of the log messsage for an HTTPS request.\n\nIf this field is empty, log messages use the implementation's default HTTPS log format.  For HAProxy's default HTTPS log format, see the HAProxy documentation: http://docs.haproxy.org/2.8/configuration.html#8.2.4\n\nNote that this format only applies to HTTPS connections for which the ingress controller terminates encryption (that is, edge-terminated or reencrypt connections).  It does not affect the log format for TLS passthrough connections.",
 							Type:        []string{"string"},
 							Format:      "",
 						},

@@ -98,10 +98,16 @@
                         "name": "GCPCustomAPIEndpointsInstall"
                     },
                     {
+                        "name": "HTTPSLogFormat"
+                    },
+                    {
                         "name": "ImageModeStatusReporting"
                     },
                     {
                         "name": "ImageStreamImportMode"
+                    },
+                    {
+                        "name": "ImageVolume"
                     },
                     {
                         "name": "IngressControllerDynamicConfigurationManager"
@@ -114,6 +120,9 @@
                     },
                     {
                         "name": "InsightsOnDemandDataGather"
+                    },
+                    {
+                        "name": "InsightsRuntimeExtractor"
                     },
                     {
                         "name": "IrreconcilableMachineConfig"
@@ -191,10 +200,19 @@
                         "name": "SignatureStores"
                     },
                     {
+                        "name": "SigstoreImageVerification"
+                    },
+                    {
                         "name": "SigstoreImageVerificationPKI"
                     },
                     {
+                        "name": "StoragePerformantSecurityPolicy"
+                    },
+                    {
                         "name": "TranslateStreamCloseWebsocketRequests"
+                    },
+                    {
+                        "name": "UpgradeStatus"
                     },
                     {
                         "name": "VSphereConfigurableMaxAllowedBlockVolumesPerNode"
@@ -247,9 +265,6 @@
                         "name": "HighlyAvailableArbiter"
                     },
                     {
-                        "name": "ImageVolume"
-                    },
-                    {
                         "name": "IngressControllerLBSubnetsAWS"
                     },
                     {
@@ -296,15 +311,6 @@
                     },
                     {
                         "name": "SetEIPForNLBIngressController"
-                    },
-                    {
-                        "name": "SigstoreImageVerification"
-                    },
-                    {
-                        "name": "StoragePerformantSecurityPolicy"
-                    },
-                    {
-                        "name": "UpgradeStatus"
                     },
                     {
                         "name": "UserNamespacesPodSecurityStandards"

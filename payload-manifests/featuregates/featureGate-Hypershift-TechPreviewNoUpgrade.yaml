@@ -22,6 +22,9 @@
                         "name": "ClusterAPIInstall"
                     },
                     {
+                        "name": "ClusterVersionOperatorConfiguration"
+                    },
+                    {
                         "name": "EventedPLEG"
                     },
                     {
@@ -114,9 +117,6 @@
                         "name": "ClusterMonitoringConfig"
                     },
                     {
-                        "name": "ClusterVersionOperatorConfiguration"
-                    },
-                    {
                         "name": "ConsolePluginContentSecurityPolicy"
                     },
                     {
@@ -162,6 +162,9 @@
                         "name": "GatewayAPIController"
                     },
                     {
+                        "name": "HTTPSLogFormat"
+                    },
+                    {
                         "name": "HighlyAvailableArbiter"
                     },
                     {
@@ -187,6 +190,9 @@
                     },
                     {
                         "name": "InsightsOnDemandDataGather"
+                    },
+                    {
+                        "name": "InsightsRuntimeExtractor"
                     },
                     {
                         "name": "IrreconcilableMachineConfig"
